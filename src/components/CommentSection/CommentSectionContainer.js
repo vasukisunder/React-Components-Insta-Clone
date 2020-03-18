@@ -7,9 +7,15 @@ import "./Comment.css";
 const CommentSection = props => {
   // Add state for the comments
 
+  const [comment] = useState(props.comments);
+  
   return (
     <div>
-      {/* map through the comments data and return the Comment component */}
+      
+      {comment.map(c => (
+        <Comment user = {c.username} com = {c.text} />
+      ))}
+      
       <CommentInput />
     </div>
   );
